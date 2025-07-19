@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #8ec5fc;
+    --secondary-color: #e0c3fc;
+    --text-color: #333;
+    --light-color: #f8f9fa;
+    --completed-color: #76e8a8;
+    --healing-particle-color: rgba(50, 50, 50, 0.7);
+    --gold-color: #FFD700;
+    --white-light-color: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-color);
+}
+
+header, .modal-content, .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.bg-light-translucent {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.module-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent; 
+}
+
+.module-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.module-card .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.module-card .btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+
+#calendar-grid {
+    gap: 5px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.calendar-day {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.calendar-day.completed {
+    background-color: var(--completed-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#healing-animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 1;
+}
+
+#healingCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lungs-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; 
+}
+
+#affirmation {
+    display: none; 
+}
+
+.modal-footer .progress-bar {
+    background-color: var(--primary-color);
+    transition: width 0.5s ease-in-out;
+}
+
+
+.frequency-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+.frequency-control button {
+    width: 60px;
+}
+
+#transmute-container {
+    height: 130px; 
+}
+
+#transmuteCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#unspoken-text.dissolving {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+#shield-container {
+    height: 200px; 
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+#shieldCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.auric-body-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.6;
+}
+
+.question-group {
+    margin-bottom: 1rem;
+}
